@@ -4,7 +4,7 @@
 
 import archiver from 'archiver';
 
-module.exports = function (file: archiver.Format, options: archiver.ArchiverOptions): archiver.Archiver {
+function createArchiver(file: archiver.Format, options: archiver.ArchiverOptions): archiver.Archiver {
   const archive = archiver(file, options);
   let done: boolean;
   let error: archiver.ArchiverError;
@@ -44,3 +44,6 @@ module.exports = function (file: archiver.Format, options: archiver.ArchiverOpti
 
   return archive;
 };
+
+export default createArchiver
+module.exports = createArchiver
