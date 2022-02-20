@@ -4,7 +4,7 @@
 
 import archiver from 'archiver';
 
-function createArchiver(file: archiver.Format, options: archiver.ArchiverOptions): archiver.Archiver {
+function createArchiver(file: archiver.Format, options?: archiver.ArchiverOptions): archiver.Archiver {
   const archive = archiver(file, options);
   let done: boolean;
   let error: archiver.ArchiverError;
